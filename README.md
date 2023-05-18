@@ -9,7 +9,7 @@
  
 This express API provides a collection of mostly free online resources for developers, including free fonts, open source icons, and CC0 illustrations. It aims to assist developers in easily finding and accessing these valuable resources.
 
-The API is currently hosted on Render, while the Mongo Database is hosted on Mongo Atlas. Both are using Free Tiers, so please be patient if response times are slightly slower. The API includes headers for a 4-hour cache, ensuring efficient retrieval of resources.
+The API is currently hosted on Render and in an AWS EC2 Instance, while the Mongo Database is hosted on Mongo Atlas. I'm using Free Tiers, so please be patient if response times are slightly slower. Using the AWS endpoint should be faster but it's only avaliable through HTTP. The API includes headers for a 4-hour cache, ensuring efficient retrieval of resources.
 
 Please refer to the API reference below for instructions on how to use the API effectively.
 
@@ -23,7 +23,9 @@ This project also serves as an opportunity for me to improve my skills in buildi
 
 ### Endpoint
 
-You can acess the API at the following endpoint: https://online-resources-api.onrender.com/api/
+You can acess the API at the following endpoints: 
+- https://online-resources-api.onrender.com/api/
+- http://ec2-54-207-254-251.sa-east-1.compute.amazonaws.com/api
 
 ### Resources
 
