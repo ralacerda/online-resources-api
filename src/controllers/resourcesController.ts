@@ -5,7 +5,7 @@ export default class ResourceController {
   static getAllResources = async (req: Request, res: Response) => {
     try {
       const allResources = await resources.find();
-      res.send({ message: allResources });
+      res.send(allResources);
     } catch (e) {
       res.status(400).send({ message: `Error: ${e}` });
     }
@@ -15,7 +15,7 @@ export default class ResourceController {
     try {
       const allTags = await resources.distinct("tags");
 
-      res.send({ message: allTags });
+      res.send(allTags);
     } catch (e) {
       res.status(400).send({ message: `Error: ${e}` });
     }
@@ -25,7 +25,7 @@ export default class ResourceController {
     try {
       const resourceWithTag = await resources.find({ tags: req.params.tag });
 
-      res.send({ message: resourceWithTag });
+      res.send(resourceWithTag);
     } catch (e) {
       res.status(400).send({ message: `Error: ${e}` });
     }
