@@ -1,17 +1,14 @@
 import type { Request, Response } from "express";
 import resources from "../models/Resource";
+import basicQuery from "../utils/basicQuery";
 
 export default class ResourceController {
   static getAllResources = async (req: Request, res: Response) => {
-    try {
-      let limit = Number(req.query.limit) || 10;
-      let skip = Number(req.query.skip) || 0;
+    await basicQuery(req, res, resources, {});
+  };
 
-      const allResources = await resources.find().limit(limit).skip(skip);
-      res.send(allResources);
-    } catch (e) {
-      res.status(400).send({ message: `Error: ${e}` });
-    }
+  static getResourceByTag = async (req: Request, res: Response) => {
+    await basicQuery(req, res, resources, { tags: req.params.tag });
   };
 
   static getAllTags = async (req: Request, res: Response) => {
@@ -23,16 +20,6 @@ export default class ResourceController {
       ]);
 
       res.send(allTags);
-    } catch (e) {
-      res.status(400).send({ message: `Error: ${e}` });
-    }
-  };
-
-  static getResourceByTag = async (req: Request, res: Response) => {
-    try {
-      const resourceWithTag = await resources.find({ tags: req.params.tag });
-
-      res.send(resourceWithTag);
     } catch (e) {
       res.status(400).send({ message: `Error: ${e}` });
     }
