@@ -1,4 +1,3 @@
-
 # Online Resource API
 
 <p>
@@ -23,7 +22,8 @@ This project also serves as an opportunity for me to improve my skills in buildi
 
 ### Endpoint
 
-You can acess the API at the following endpoints: 
+You can acess the API at the following endpoints:
+
 - https://online-resources-api.onrender.com/api/
 - http://ec2-54-207-254-251.sa-east-1.compute.amazonaws.com/api
 
@@ -31,20 +31,26 @@ You can acess the API at the following endpoints:
 
 All resources have the following properties
 
-| Property  | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `name`     | `string` | Name of the resource             |
-| `url `         | `string` | Link to the resource url         |
-| `description` | `string` | A short description of the resource            |
-| `tags`     | `string[]` | List of tags for the resource            |
-| `screenshot`     | `string` | Link to a screenshot from the resource website            |
+| Property      | Type       | Description                                    |
+| :------------ | :--------- | :--------------------------------------------- |
+| `name`        | `string`   | Name of the resource                           |
+| `url `        | `string`   | Link to the resource url                       |
+| `description` | `string`   | A short description of the resource            |
+| `tags`        | `string[]` | List of tags for the resource                  |
+| `screenshot`  | `string`   | Link to a screenshot from the resource website |
 
-### Get all resources
+### Get resources
 
 ```
   GET /api/
 ```
+
 Returns a list of all resources.
+
+| Parameter | Type     | Description                                                     |
+| :-------- | :------- | :-------------------------------------------------------------- |
+| `limit`   | `number` | How many resources. Default to 10                               |
+| `skip`    | `number` | How many resources to skip. Useful for pagination. Default to 0 |
 
 ### Get list of tags
 
@@ -60,18 +66,16 @@ Returns a list of all tags. It only included unique values.
   GET /api/tag/{$tag}
 ```
 
-Returns a list of all resources that have the specified tag. 
+Returns a list of all resources that have the specified tag.
 
-| Parameter | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
+| Parameter | Type     | Description           |
+| :-------- | :------- | :-------------------- |
 | `tag`     | `string` | **Required** tag name |
-
 
 ## Feedback and Contributions
 
-If you have any ideas for improvement or if you come across other valuable resources that can be included in the API, please feel free to open an issue on the GitHub repository. Additionally, if you would like to contribute to the project directly, pull requests are welcome. 
+If you have any ideas for improvement or if you come across other valuable resources that can be included in the API, please feel free to open an issue on the GitHub repository. Additionally, if you would like to contribute to the project directly, pull requests are welcome.
 
 ## Authors
 
 - [@ralacerda](https://github.com/ralacerda)
-

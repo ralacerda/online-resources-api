@@ -4,7 +4,10 @@ import resources from "../models/Resource";
 export default class ResourceController {
   static getAllResources = async (req: Request, res: Response) => {
     try {
-      const allResources = await resources.find();
+      let limit = Number(req.query.limit) || 10;
+      let skip = Number(req.query.skip) || 0;
+
+      const allResources = await resources.find().limit(limit).skip(skip);
       res.send(allResources);
     } catch (e) {
       res.status(400).send({ message: `Error: ${e}` });
