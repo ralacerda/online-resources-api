@@ -58,7 +58,12 @@ Returns a list of all resources.
   GET /api/tags/
 ```
 
-Returns a list of all tags. It only included unique values.
+Returns an array of objects, each object represent a unique tag. Each object has the following shape:
+
+| Property | Type     | Description                      |
+| :------- | :------- | :------------------------------- |
+| `name`   | `string` | Name of the tag                  |
+| `count ` | `number` | How many resources have that tag |
 
 ### Get resource by tag
 

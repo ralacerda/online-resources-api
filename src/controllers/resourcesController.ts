@@ -16,7 +16,11 @@ export default class ResourceController {
 
   static getAllTags = async (req: Request, res: Response) => {
     try {
-      const allTags = await resources.distinct("tags");
+      const allTags = await resources.aggregate([
+        { $unwind: "$tags" },
+        { $group: { _id: "$tags", count: { $sum: 1 } } },
+        { $project: { _id: 0, name: "$_id", count: "$count" } },
+      ]);
 
       res.send(allTags);
     } catch (e) {
