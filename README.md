@@ -2,8 +2,10 @@
 
 <p>
   <a href="https://github.com/ralacerda/online-resources-api/blob/main/LICENSE"><img src=https://img.shields.io/badge/license-MIT-sucess /></a>
-  <a href="https://stats.uptimerobot.com/Kl174uDRPq"><img src="https://img.shields.io/uptimerobot/status/m794385062-1051146f4e20cb86cc79c447" /></a>
-  <a href="https://stats.uptimerobot.com/Kl174uDRPq"><img src="https://img.shields.io/uptimerobot/ratio/7/m794385062-1051146f4e20cb86cc79c447" /></a>
+  <a href="https://stats.uptimerobot.com/Kl174uDRPq"><img src="https://img.shields.io/uptimerobot/status/m794413195-f1c3e4c8eba4885d2496e964?label=status(aws)" /></a>
+  <a href="https://stats.uptimerobot.com/Kl174uDRPq"><img src="https://img.shields.io/uptimerobot/ratio/7/m794413195-f1c3e4c8eba4885d2496e964?label=uptime(aws)" /></a>
+    <a href="https://stats.uptimerobot.com/Kl174uDRPq"><img src="https://img.shields.io/uptimerobot/status/m794413207-fbb77af56495985f9c5cbbad?label=status(render)" /></a>
+  <a href="https://stats.uptimerobot.com/Kl174uDRPq"><img src="https://img.shields.io/uptimerobot/ratio/7/m794413207-fbb77af56495985f9c5cbbad?label=uptime(render)" /></a>
  </p>
  
 This express API provides a collection of mostly free online resources for developers, including free fonts, open source icons, and CC0 illustrations. It aims to assist developers in easily finding and accessing these valuable resources.
