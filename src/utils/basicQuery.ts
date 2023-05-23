@@ -1,14 +1,20 @@
-import type { Document, FilterQuery, Model } from "mongoose";
+import type { Document, FilterQuery, Model, Query } from "mongoose";
 import type { Request, Response } from "express";
 
 export default async function basicQuery<
   T extends Document,
   Q extends FilterQuery<T>
 >(req: Request, res: Response, model: Model<any>, query: Q) {
-  let limit = Number(req.query.limit) || 10;
   let skip = Number(req.query.skip) || 0;
 
-  const allResources = model.find(query).limit(limit).skip(skip);
+  let allResources: Query<any[], any, {}, any>;
+
+  if (req.query.limit) {
+    allResources = model.find(query).limit(Number(req.query.limit)).skip(skip);
+  } else {
+    allResources = model.find(query).skip(skip);
+  }
+
   const resourcesCount = model.countDocuments(query);
 
   try {
