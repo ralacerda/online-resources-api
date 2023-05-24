@@ -6,6 +6,7 @@ const resourceSchema = new mongoose.Schema({
   tags: { type: Array },
   url: { type: String },
   screenshot: { type: String },
+  type: { type: String },
 });
 
 const resources = mongoose.model("resources", resourceSchema);
