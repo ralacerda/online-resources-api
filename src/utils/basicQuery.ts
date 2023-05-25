@@ -10,9 +10,13 @@ export default async function basicQuery<
   let allResources: Query<any[], any, {}, any>;
 
   if (req.query.limit) {
-    allResources = model.find(query).limit(Number(req.query.limit)).skip(skip);
+    allResources = model
+      .find(query)
+      .sort({ name: "asc" })
+      .limit(Number(req.query.limit))
+      .skip(skip);
   } else {
-    allResources = model.find(query).skip(skip);
+    allResources = model.find(query).sort({ name: "asc" }).skip(skip);
   }
 
   const resourcesCount = model.countDocuments(query);
