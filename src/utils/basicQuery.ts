@@ -16,7 +16,7 @@ export default async function basicQuery<
   options?: BasicQueryOptions
 ) {
   const skip = Number(req.query.skip) || 0;
-  const sort = options.sort || { name: "asc" };
+  const sort = options?.sort || { name: "asc" };
 
   let allResources: Query<any[], any, {}, any>;
 
