@@ -10,6 +10,7 @@ db.once("open", () => console.info("Successfully connected to the database"));
 const app = express();
 app.use(setCache);
 app.use(setCors);
+app.use(express.static("public"));
 routes(app);
 
 export default app;
