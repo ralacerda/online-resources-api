@@ -4,7 +4,23 @@ import basicQuery from "../utils/basicQuery";
 
 export default class ResourceController {
   static getAllResources = async (req: Request, res: Response) => {
-    await basicQuery(req, res, resources, {});
+    const searchString = req.query.search;
+
+    if (typeof searchString == "string") {
+      await basicQuery(
+        req,
+        res,
+        resources,
+        {
+          $text: { $search: searchString },
+        },
+        { sort: { score: { $meta: "textScore" } } }
+      );
+
+      return;
+    }
+
+    await basicQuery(req, res, resources);
   };
 
   static getResourceByTag = async (req: Request, res: Response) => {

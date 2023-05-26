@@ -47,12 +47,13 @@ All resources have the following properties
   GET /api/
 ```
 
-Returns a list of all resources.
+Returns a list of resources.
 
 | Parameter | Type     | Description                                                                                |
 | :-------- | :------- | :----------------------------------------------------------------------------------------- |
 | `limit`   | `number` | How many resources to include in the response. If omitted, every resource will be included |
 | `skip`    | `number` | How many resources to skip. Useful for pagination. Default to 0                            |
+| `search`  | `string` | An optional string for search.                                                             |
 
 ### Get list of tags
 
